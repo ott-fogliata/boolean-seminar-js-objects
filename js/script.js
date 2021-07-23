@@ -38,3 +38,37 @@ const tama = {
 
 
 
+const EventTarget = {
+    name: 'evento',
+    surname: 'gianni',
+    addEventListener(type, listener) {
+        
+        if (type === 'click') {
+            // fa robe...
+            if (typeof listener === 'function') {
+                listener();
+            }
+        }
+
+    },
+    oggetto: {
+        age: 12,
+        funzioneInterna() {
+            console.log(this);
+        }
+    }
+}
+
+
+
+const buttonHTML = document.getElementById('button-click');
+
+
+const funzioneDaEseguire = function () {
+    console.log(this);
+    console.log(typeof this)
+}
+
+buttonHTML.addEventListener('click', () => {
+    console.log(this);
+})
